@@ -281,7 +281,7 @@
   <rect x="40" y="2260" width="1520" height="840" rx="22" class="card"/>
   <circle cx="98" cy="2318" r="24" fill="#0D9488"/><text x="98" y="2326" text-anchor="middle" class="badge">4</text>
   <text x="136" y="2329" class="h2">Na prática: Áudio (Dante) + MIDI na mesma estrutura</text>
-  <text x="80" y="2372" class="lead">Um switch gerenciável, duas VLANs. O computador do playback usa duas placas de rede — uma em cada VLAN.</text>
+  <text x="80" y="2372" class="lead">Opção robusta: duas VLANs e o computador com 2 placas de rede. Em setups pequenos, 1 cabo e 1 rede só também funcionam.</text>
 
   <!-- aparelhos -->
   <g text-anchor="middle">
