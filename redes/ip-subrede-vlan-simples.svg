@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1860" viewBox="0 0 1600 1860" font-family="Inter, 'DejaVu Sans', sans-serif">
+  <defs>
+    <style>
+      .h1{font-size:46px;font-weight:800;fill:#111827}
+      .sub{font-size:21px;fill:#6B7280}
+      .bt{font-size:30px;font-weight:800;fill:#fff}
+      .num{font-size:24px;font-weight:800}
+      .t{font-size:21px;fill:#1F2937}
+      .tb{font-weight:800}
+      .s{font-size:18px;fill:#374151}
+      .mono{font-family:'DejaVu Sans Mono',monospace}
+      .card{fill:#fff;stroke:#E2E6EE;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1600" height="1860" fill="#F4F6FA"/>
+
+  <text x="800" y="80" text-anchor="middle" class="h1">Rede explicada de um jeito simples</text>
+  <text x="800" y="120" text-anchor="middle" class="sub">Pense na rede como uma cidade: o IP é o endereço, a sub-rede é a rua e a VLAN é o andar do prédio.</text>
+
+  <!-- ================= 1. IP ================= -->
+  <rect x="40" y="170" width="480" height="760" rx="22" class="card"/>
+  <rect x="40" y="170" width="480" height="80" rx="22" fill="#2563EB"/><rect x="40" y="220" width="480" height="30" fill="#2563EB"/>
+  <circle cx="92" cy="210" r="24" fill="#fff"/><text x="92" y="219" text-anchor="middle" class="num" fill="#2563EB">1</text>
+  <text x="130" y="221" class="bt">IP = o endereço</text>
+
+  <!-- placa da rua -->
+  <line x1="150" y1="318" x2="150" y2="480" stroke="#6B7280" stroke-width="6"/>
+  <rect x="62" y="290" width="176" height="44" rx="8" fill="#15803D"/>
+  <text x="150" y="319" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">Rua 192.168.10</text>
+  <!-- casa -->
+  <polygon points="245,390 335,318 425,390" fill="#DC2626"/>
+  <rect x="262" y="388" width="146" height="92" fill="#FEF3C7" stroke="#B45309" stroke-width="2"/>
+  <rect x="318" y="428" width="34" height="52" rx="3" fill="#92400E"/>
+  <rect x="362" y="400" width="38" height="28" rx="5" fill="#fff" stroke="#EA580C" stroke-width="2"/>
+  <text x="381" y="421" text-anchor="middle" font-size="17" font-weight="800" fill="#EA580C">25</text>
+  <line x1="60" y1="481" x2="500" y2="481" stroke="#9CA3AF" stroke-width="3"/>
+
+  <text x="280" y="562" text-anchor="middle" font-size="50" font-weight="800"><tspan fill="#2563EB">192.168.10</tspan><tspan fill="#EA580C">.25</tspan></text>
+  <text x="230" y="600" text-anchor="middle" font-size="18" font-weight="700" fill="#2563EB">↑ nome da rua</text>
+  <text x="412" y="600" text-anchor="middle" font-size="18" font-weight="700" fill="#EA580C">↑ casa</text>
+
+  <text x="80" y="660" class="t">Todo aparelho na rede tem um</text>
+  <text x="80" y="690" class="t"><tspan class="tb">endereço único</tspan>. É assim que os</text>
+  <text x="80" y="720" class="t">dados sabem para onde ir.</text>
+
+  <rect x="70" y="770" width="420" height="130" rx="14" fill="#EFF6FF"/>
+  <text x="94" y="808" class="s tb">Regra de ouro</text>
+  <text x="94" y="840" class="s">Dois aparelhos <tspan class="tb">nunca</tspan> podem ter o</text>
+  <text x="94" y="868" class="s">mesmo IP na mesma rede.</text>
+
+  <!-- ================= 2. SUB-REDE ================= -->
+  <rect x="560" y="170" width="480" height="760" rx="22" class="card"/>
+  <rect x="560" y="170" width="480" height="80" rx="22" fill="#EA580C"/><rect x="560" y="220" width="480" height="30" fill="#EA580C"/>
+  <circle cx="612" cy="210" r="24" fill="#fff"/><text x="612" y="219" text-anchor="middle" class="num" fill="#EA580C">2</text>
+  <text x="650" y="221" class="bt">Sub-rede = a rua</text>
+
+  <!-- rua A -->
+  <g>
+    <polygon points="610,300 635,280 660,300" fill="#2563EB"/><rect x="614" y="300" width="42" height="34" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+    <polygon points="690,300 715,280 740,300" fill="#2563EB"/><rect x="694" y="300" width="42" height="34" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+    <polygon points="770,300 795,280 820,300" fill="#2563EB"/><rect x="774" y="300" width="42" height="34" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+    <g text-anchor="middle" font-size="14" font-weight="800" fill="#1E3A8A"><text x="635" y="323">.1</text><text x="715" y="323">.2</text><text x="795" y="323">.3</text></g>
+    <rect x="596" y="336" width="290" height="36" rx="6" fill="#6B7280"/>
+    <text x="741" y="360" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">RUA 192.168.10.x</text>
+    <text x="741" y="398" text-anchor="middle" font-size="15" font-weight="700" fill="#15803D">✔ na mesma rua: conversam direto</text>
+  </g>
+  <!-- rua B -->
+  <g>
+    <polygon points="610,450 635,430 660,450" fill="#7C3AED"/><rect x="614" y="450" width="42" height="34" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2"/>
+    <polygon points="690,450 715,430 740,450" fill="#7C3AED"/><rect x="694" y="450" width="42" height="34" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2"/>
+    <polygon points="770,450 795,430 820,450" fill="#7C3AED"/><rect x="774" y="450" width="42" height="34" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2"/>
+    <g text-anchor="middle" font-size="14" font-weight="800" fill="#4C1D95"><text x="635" y="473">.1</text><text x="715" y="473">.2</text><text x="795" y="473">.3</text></g>
+    <rect x="596" y="486" width="290" height="36" rx="6" fill="#6B7280"/>
+    <text x="741" y="510" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">RUA 192.168.20.x</text>
+  </g>
+  <!-- roteador -->
+  <path d="M886,354 C905,354 905,400 918,400" fill="none" stroke="#111827" stroke-width="3"/>
+  <path d="M886,504 C905,504 905,460 918,460" fill="none" stroke="#111827" stroke-width="3"/>
+  <rect x="918" y="392" width="104" height="76" rx="12" fill="#111827"/>
+  <text x="970" y="425" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">Roteador</text>
+  <text x="970" y="447" text-anchor="middle" font-size="13" fill="#CBD5E1">(o porteiro)</text>
+  <text x="800" y="566" text-anchor="middle" font-size="15" font-weight="700" fill="#B45309">→ para ir a outra rua, passa pelo roteador</text>
+
+  <text x="600" y="660" class="t">Sub-rede é um <tspan class="tb">grupo de aparelhos</tspan></text>
+  <text x="600" y="690" class="t">que conversam direto. Para falar</text>
+  <text x="600" y="720" class="t">com outro grupo, passam pelo roteador.</text>
+
+  <rect x="590" y="770" width="420" height="130" rx="14" fill="#FFF7ED"/>
+  <text x="614" y="808" class="s tb">E a tal da máscara?</text>
+  <text x="614" y="840" class="s"><tspan class="mono">/24</tspan> ou <tspan class="mono">255.255.255.0</tspan> quer dizer:</text>
+  <text x="614" y="868" class="s">3 primeiros números = <tspan class="tb" fill="#2563EB">rua</tspan>; o último = <tspan class="tb" fill="#EA580C">casa</tspan></text>
+
+  <!-- ================= 3. VLAN ================= -->
+  <rect x="1080" y="170" width="480" height="760" rx="22" class="card"/>
+  <rect x="1080" y="170" width="480" height="80" rx="22" fill="#7C3AED"/><rect x="1080" y="220" width="480" height="30" fill="#7C3AED"/>
+  <circle cx="1132" cy="210" r="24" fill="#fff"/><text x="1132" y="219" text-anchor="middle" class="num" fill="#7C3AED">3</text>
+  <text x="1170" y="221" class="bt">VLAN = o andar</text>
+
+  <!-- prédio -->
+  <rect x="1186" y="272" width="268" height="18" rx="4" fill="#374151"/>
+  <rect x="1196" y="290" width="248" height="270" fill="#F3F4F6" stroke="#374151" stroke-width="3"/>
+  <rect x="1206" y="300" width="228" height="76" rx="6" fill="#DB2777"/>
+  <rect x="1206" y="388" width="228" height="76" rx="6" fill="#D97706"/>
+  <rect x="1206" y="476" width="228" height="76" rx="6" fill="#0D9488"/>
+  <g stroke="#374151" stroke-width="5"><line x1="1196" y1="382" x2="1444" y2="382"/><line x1="1196" y1="470" x2="1444" y2="470"/></g>
+  <g text-anchor="middle" fill="#fff">
+    <text x="1320" y="334" font-size="18" font-weight="800">Andar 30</text><text x="1320" y="358" font-size="15">Visitantes</text>
+    <text x="1320" y="422" font-size="18" font-weight="800">Andar 20</text><text x="1320" y="446" font-size="15">MIDI</text>
+    <text x="1320" y="510" font-size="18" font-weight="800">Andar 10</text><text x="1320" y="534" font-size="15">Áudio</text>
+  </g>
+  <line x1="1150" y1="561" x2="1490" y2="561" stroke="#9CA3AF" stroke-width="3"/>
+  <text x="1320" y="598" text-anchor="middle" font-size="18" font-weight="800" fill="#374151">1 prédio = 1 switch</text>
+
+  <text x="1120" y="660" class="t">Um só switch dividido em</text>
+  <text x="1120" y="690" class="t"><tspan class="tb">“andares” separados</tspan>. Quem está</text>
+  <text x="1120" y="720" class="t">num andar não escuta o outro.</text>
+
+  <rect x="1110" y="770" width="420" height="130" rx="14" fill="#F5F3FF"/>
+  <text x="1134" y="808" class="s tb">Pra que serve?</text>
+  <text x="1134" y="840" class="s">Separar coisas que não devem se</text>
+  <text x="1134" y="868" class="s">misturar — sem comprar outro switch.</text>
+
+  <!-- ================= 4. SEU CASO ================= -->
+  <rect x="40" y="960" width="1520" height="760" rx="22" class="card"/>
+  <rect x="40" y="960" width="1520" height="80" rx="22" fill="#0D9488"/><rect x="40" y="1010" width="1520" height="30" fill="#0D9488"/>
+  <circle cx="92" cy="1000" r="24" fill="#fff"/><text x="92" y="1009" text-anchor="middle" class="num" fill="#0D9488">4</text>
+  <text x="130" y="1011" class="bt">Seu caso: Áudio e MIDI no mesmo switch</text>
+
+  <!-- aparelhos -->
+  <g fill="#F0FDFA" stroke="#0D9488" stroke-width="3">
+    <rect x="102" y="1080" width="126" height="64" rx="12"/><rect x="237" y="1080" width="126" height="64" rx="12"/><rect x="372" y="1080" width="126" height="64" rx="12"/>
+  </g>
+  <g fill="#FFFBEB" stroke="#D97706" stroke-width="3">
+    <rect x="552" y="1080" width="126" height="64" rx="12"/><rect x="687" y="1080" width="126" height="64" rx="12"/><rect x="822" y="1080" width="126" height="64" rx="12"/>
+  </g>
+  <g text-anchor="middle" font-size="17" font-weight="800" fill="#1F2937">
+    <text x="165" y="1118">Mesa de som</text><text x="300" y="1118">Stagebox</text><text x="435" y="1118">Amplificador</text>
+    <text x="615" y="1118">Teclado MIDI</text><text x="750" y="1118">iPad</text><text x="885" y="1118">Wi-Fi</text>
+  </g>
+  <g stroke-width="5">
+    <line x1="165" y1="1144" x2="165" y2="1250" stroke="#0D9488"/><line x1="300" y1="1144" x2="300" y2="1250" stroke="#0D9488"/><line x1="435" y1="1144" x2="435" y2="1250" stroke="#0D9488"/>
+    <line x1="615" y1="1144" x2="615" y2="1250" stroke="#D97706"/><line x1="750" y1="1144" x2="750" y2="1250" stroke="#D97706"/><line x1="885" y1="1144" x2="885" y2="1250" stroke="#D97706"/>
+  </g>
+  <!-- switch dividido -->
+  <rect x="84" y="1232" width="880" height="112" rx="14" fill="#E5E7EB" stroke="#6B7280" stroke-width="2"/>
+  <rect x="96" y="1244" width="424" height="88" rx="10" fill="#CCFBF1"/>
+  <rect x="528" y="1244" width="424" height="88" rx="10" fill="#FEF3C7"/>
+  <g>
+    <rect x="143" y="1250" width="44" height="26" rx="4" fill="#0D9488"/><rect x="278" y="1250" width="44" height="26" rx="4" fill="#0D9488"/><rect x="413" y="1250" width="44" height="26" rx="4" fill="#0D9488"/>
+    <rect x="593" y="1250" width="44" height="26" rx="4" fill="#D97706"/><rect x="728" y="1250" width="44" height="26" rx="4" fill="#D97706"/><rect x="863" y="1250" width="44" height="26" rx="4" fill="#D97706"/>
+    <rect x="458" y="1300" width="44" height="26" rx="4" fill="#0D9488"/><rect x="546" y="1300" width="44" height="26" rx="4" fill="#D97706"/>
+  </g>
+  <text x="270" y="1316" text-anchor="middle" font-size="19" font-weight="800" fill="#0F766E">VLAN 10 · ÁUDIO</text>
+  <text x="760" y="1316" text-anchor="middle" font-size="19" font-weight="800" fill="#B45309">VLAN 20 · MIDI</text>
+
+  <!-- computador -->
+  <g stroke-width="5">
+    <line x1="480" y1="1326" x2="480" y2="1404" stroke="#0D9488"/>
+    <line x1="568" y1="1326" x2="568" y2="1404" stroke="#D97706"/>
+  </g>
+  <text x="468" y="1372" text-anchor="end" font-size="16" font-weight="800" fill="#0F766E">cabo 1 → Áudio</text>
+  <text x="580" y="1372" font-size="16" font-weight="800" fill="#B45309">cabo 2 → MIDI</text>
+  <rect x="420" y="1404" width="208" height="72" rx="8" fill="#111827"/>
+  <rect x="398" y="1476" width="252" height="14" rx="6" fill="#4B5563"/>
+  <text x="524" y="1448" text-anchor="middle" font-size="19" font-weight="800" fill="#fff">Computador</text>
+  <text x="524" y="1528" text-anchor="middle" font-size="18" fill="#374151">2 cabos (2 placas de rede) = ele “mora” nos dois andares</text>
+
+  <rect x="80" y="1570" width="880" height="110" rx="16" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <text x="108" y="1614" font-size="22" font-weight="800" fill="#15803D">✔ Resultado</text>
+  <text x="108" y="1650" class="t">Se o Wi-Fi ou a rede de MIDI der problema, <tspan class="tb">o áudio continua tocando</tspan>.</text>
+
+  <!-- passo a passo -->
+  <rect x="1000" y="1070" width="520" height="610" rx="16" fill="#F8FAFC" stroke="#E2E6EE" stroke-width="2"/>
+  <text x="1030" y="1116" font-size="24" font-weight="800" fill="#111827">Passo a passo</text>
+  <g>
+    <circle cx="1050" cy="1170" r="20" fill="#0D9488"/><text x="1050" y="1178" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">1</text>
+    <text x="1084" y="1166" font-size="20" font-weight="800" fill="#111827">Switch gerenciável</text>
+    <text x="1084" y="1194" class="s">Só ele permite criar VLANs</text>
+    <text x="1084" y="1218" class="s">(ex.: Netgear AV M4250).</text>
+
+    <circle cx="1050" cy="1280" r="20" fill="#0D9488"/><text x="1050" y="1288" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">2</text>
+    <text x="1084" y="1276" font-size="20" font-weight="800" fill="#111827">Crie 2 VLANs</text>
+    <text x="1084" y="1304" class="s"><tspan fill="#0F766E" font-weight="800">VLAN 10 = Áudio</tspan> · <tspan fill="#B45309" font-weight="800">VLAN 20 = MIDI</tspan></text>
+
+    <circle cx="1050" cy="1366" r="20" fill="#0D9488"/><text x="1050" y="1374" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">3</text>
+    <text x="1084" y="1362" font-size="20" font-weight="800" fill="#111827">Cada aparelho na sua cor</text>
+    <text x="1084" y="1390" class="s">Ligue cada um numa porta da</text>
+    <text x="1084" y="1414" class="s">VLAN dele.</text>
+
+    <circle cx="1050" cy="1476" r="20" fill="#0D9488"/><text x="1050" y="1484" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">4</text>
+    <text x="1084" y="1472" font-size="20" font-weight="800" fill="#111827">Computador com 2 cabos</text>
+    <text x="1084" y="1500" class="s">Use um adaptador USB-Ethernet</text>
+    <text x="1084" y="1524" class="s">para ter a 2ª porta de rede.</text>
+  </g>
+  <line x1="1030" y1="1574" x2="1490" y2="1574" stroke="#E2E6EE" stroke-width="2"/>
+  <text x="1030" y="1610" font-size="15" fill="#6B7280">Ajustes avançados (QoS, EEE, IGMP) estão</text>
+  <text x="1030" y="1632" font-size="15" fill="#6B7280">na versão detalhada: ip-subrede-vlan.png</text>
+
+  <!-- ================= Resumo ================= -->
+  <rect x="40" y="1752" width="1520" height="76" rx="18" fill="#111827"/>
+  <g font-size="23" fill="#fff" text-anchor="middle">
+    <text x="300" y="1799"><tspan font-weight="800" fill="#93C5FD">IP</tspan> = endereço</text>
+    <text x="800" y="1799"><tspan font-weight="800" fill="#FDBA74">Sub-rede</tspan> = rua</text>
+    <text x="1300" y="1799"><tspan font-weight="800" fill="#C4B5FD">VLAN</tspan> = andar do prédio</text>
+  </g>
+</svg>
