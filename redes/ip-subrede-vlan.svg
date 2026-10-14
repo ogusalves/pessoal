@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2360" viewBox="0 0 1600 2360" font-family="Inter, 'DejaVu Sans', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="3240" viewBox="0 0 1600 3240" font-family="Inter, 'DejaVu Sans', sans-serif">
   <defs>
     <style>
       .h1{font-size:46px;font-weight:800;fill:#111827}
@@ -18,7 +18,7 @@
     </marker>
   </defs>
 
-  <rect width="1600" height="2360" fill="#F4F6FA"/>
+  <rect width="1600" height="3240" fill="#F4F6FA"/>
 
   <!-- Cabeçalho -->
   <text x="800" y="78" text-anchor="middle" class="h1">Como funcionam IP, Sub-rede e VLAN</text>
@@ -276,11 +276,109 @@
   <text x="836" y="2152" class="t">Isoladas pelo switch. Só se falam passando pelo</text>
   <text x="836" y="2176" class="t">roteador/switch L3 — onde o firewall pode bloquear.</text>
 
+
+  <!-- ============ 4. EXEMPLO: ÁUDIO + MIDI ============ -->
+  <rect x="40" y="2260" width="1520" height="840" rx="22" class="card"/>
+  <circle cx="98" cy="2318" r="24" fill="#0D9488"/><text x="98" y="2326" text-anchor="middle" class="badge">4</text>
+  <text x="136" y="2329" class="h2">Na prática: Áudio (Dante) + MIDI na mesma estrutura</text>
+  <text x="80" y="2372" class="lead">Um switch gerenciável, duas VLANs. O computador do playback usa duas placas de rede — uma em cada VLAN.</text>
+
+  <!-- aparelhos -->
+  <g text-anchor="middle">
+    <g fill="#F0FDFA" stroke="#0D9488" stroke-width="3">
+      <rect x="106" y="2440" width="132" height="68" rx="12"/><rect x="252" y="2440" width="132" height="68" rx="12"/><rect x="398" y="2440" width="132" height="68" rx="12"/>
+    </g>
+    <g fill="#FFFBEB" stroke="#D97706" stroke-width="3">
+      <rect x="560" y="2440" width="132" height="68" rx="12"/><rect x="706" y="2440" width="132" height="68" rx="12"/><rect x="852" y="2440" width="132" height="68" rx="12"/>
+    </g>
+    <g font-size="15" font-weight="700" fill="#1F2937">
+      <text x="172" y="2469">Mesa digital</text><text x="318" y="2469">Stagebox</text><text x="464" y="2469">Amplificador</text>
+      <text x="626" y="2469">Teclado MIDI</text><text x="772" y="2469">iPad (OSC)</text><text x="918" y="2469">Roteador Wi-Fi</text>
+    </g>
+    <g font-size="13" class="mono" fill="#4B5563">
+      <text x="172" y="2493">.10.10</text><text x="318" y="2493">.10.11</text><text x="464" y="2493">.10.12</text>
+      <text x="626" y="2493">.20.10</text><text x="772" y="2493">.20.11</text><text x="918" y="2493">.20.1</text>
+    </g>
+  </g>
+  <g stroke-width="4">
+    <line x1="172" y1="2508" x2="172" y2="2566" stroke="#0D9488"/><line x1="318" y1="2508" x2="318" y2="2566" stroke="#0D9488"/><line x1="464" y1="2508" x2="464" y2="2566" stroke="#0D9488"/>
+    <line x1="626" y1="2508" x2="626" y2="2566" stroke="#D97706"/><line x1="772" y1="2508" x2="772" y2="2566" stroke="#D97706"/><line x1="918" y1="2508" x2="918" y2="2566" stroke="#D97706"/>
+  </g>
+
+  <!-- switch -->
+  <rect x="84" y="2552" width="916" height="108" rx="14" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="2"/>
+  <g>
+    <rect x="147" y="2566" width="50" height="26" rx="4" fill="#0D9488"/><rect x="293" y="2566" width="50" height="26" rx="4" fill="#0D9488"/><rect x="439" y="2566" width="50" height="26" rx="4" fill="#0D9488"/>
+    <rect x="601" y="2566" width="50" height="26" rx="4" fill="#D97706"/><rect x="747" y="2566" width="50" height="26" rx="4" fill="#D97706"/><rect x="893" y="2566" width="50" height="26" rx="4" fill="#D97706"/>
+    <rect x="439" y="2626" width="50" height="26" rx="4" fill="#0D9488"/><rect x="601" y="2626" width="50" height="26" rx="4" fill="#D97706"/>
+  </g>
+  <g text-anchor="middle" font-size="15" font-weight="800">
+    <text x="245" y="2618" fill="#0D9488">VLAN 10 · Áudio</text>
+    <text x="845" y="2618" fill="#D97706">VLAN 20 · MIDI</text>
+  </g>
+  <text x="102" y="2646" font-size="13" font-weight="700" fill="#4B5563">SWITCH GERENCIÁVEL</text>
+
+  <!-- computador com 2 placas -->
+  <g stroke-width="4">
+    <line x1="464" y1="2652" x2="464" y2="2730" stroke="#0D9488"/>
+    <line x1="626" y1="2652" x2="626" y2="2730" stroke="#D97706"/>
+  </g>
+  <g font-size="14">
+    <text x="452" y="2690" text-anchor="end" font-weight="700" fill="#0D9488">Placa 1 (interna)</text>
+    <text x="452" y="2710" text-anchor="end" class="mono" fill="#374151">192.168.10.50</text>
+    <text x="638" y="2690" font-weight="700" fill="#D97706">Placa 2 (adaptador USB)</text>
+    <text x="638" y="2710" class="mono" fill="#374151">192.168.20.50</text>
+  </g>
+  <rect x="440" y="2730" width="210" height="72" rx="8" fill="#111827"/>
+  <rect x="418" y="2802" width="254" height="14" rx="6" fill="#4B5563"/>
+  <text x="545" y="2762" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">Computador</text>
+  <text x="545" y="2784" text-anchor="middle" font-size="13" fill="#CBD5E1">Ableton + Dante VSC</text>
+
+  <g text-anchor="middle">
+    <rect x="110" y="2840" width="320" height="58" rx="29" fill="#0D9488"/>
+    <text x="270" y="2865" font-size="17" font-weight="800" fill="#fff">VLAN 10 · Áudio (Dante)</text>
+    <text x="270" y="2887" font-size="14" fill="#CCFBF1" class="mono">192.168.10.0/24</text>
+    <rect x="660" y="2840" width="320" height="58" rx="29" fill="#D97706"/>
+    <text x="820" y="2865" font-size="17" font-weight="800" fill="#fff">VLAN 20 · MIDI / Controle</text>
+    <text x="820" y="2887" font-size="14" fill="#FEF3C7" class="mono">192.168.20.0/24</text>
+  </g>
+
+  <!-- configuração do switch -->
+  <rect x="1040" y="2420" width="480" height="478" rx="16" fill="#F8FAFC" stroke="#E2E6EE" stroke-width="2"/>
+  <g class="t">
+    <text x="1066" y="2458" class="tb">Configuração do switch</text>
+    <text x="1066" y="2500"><tspan class="tb">1.</tspan> Criar VLAN 10 e VLAN 20</text>
+    <text x="1086" y="2526">portas <tspan class="tb">access</tspan> para cada aparelho</text>
+    <text x="1066" y="2568"><tspan class="tb">2.</tspan> QoS com prioridade estrita:</text>
+    <text x="1086" y="2594">• DSCP <tspan class="mono">56</tspan> (CS7) → relógio PTP</text>
+    <text x="1086" y="2620">• DSCP <tspan class="mono">46</tspan> (EF) → áudio Dante</text>
+    <text x="1066" y="2662"><tspan class="tb">3.</tspan> EEE / Green Ethernet: <tspan font-weight="800" fill="#B91C1C">DESLIGADO</tspan></text>
+    <text x="1086" y="2688" class="sm">(causa cliques e quedas no Dante)</text>
+    <text x="1066" y="2730"><tspan class="tb">4.</tspan> IGMP Snooping (se usar multicast)</text>
+    <text x="1066" y="2772"><tspan class="tb">5.</tspan> Cabo entre switches (palco ↔ FOH)</text>
+    <text x="1086" y="2798">como <tspan class="tb">trunk</tspan> levando as duas VLANs</text>
+    <text x="1066" y="2840"><tspan class="tb">6.</tspan> Wi-Fi <tspan class="tb">só</tspan> na VLAN 20 — nunca</text>
+    <text x="1086" y="2866">na rede de áudio</text>
+  </g>
+
+  <!-- avisos -->
+  <rect x="80" y="2930" width="710" height="140" rx="16" fill="#FFFBEB" stroke="#FCD34D" stroke-width="2"/>
+  <text x="106" y="2970" font-size="21" font-weight="800" fill="#B45309">⚠ A descoberta não atravessa VLANs</text>
+  <text x="106" y="3004" class="t">Dante e RTP-MIDI se encontram via Bonjour/mDNS.</text>
+  <text x="106" y="3030" class="t">Quem conversa entre si precisa estar na <tspan class="tb">mesma VLAN</tspan></text>
+  <text x="106" y="3056" class="t">(o Dante Controller fica na VLAN 10).</text>
+
+  <rect x="810" y="2930" width="710" height="140" rx="16" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="2"/>
+  <text x="836" y="2970" font-size="21" font-weight="800" fill="#0F766E">✔ Por que separar?</text>
+  <text x="836" y="3004" class="t">MIDI usa pouquíssima banda — o ganho é <tspan class="tb">robustez</tspan>:</text>
+  <text x="836" y="3030" class="t">Wi-Fi, iPad ou um PC com problema na VLAN 20</text>
+  <text x="836" y="3056" class="t">não derruba o áudio no meio do show.</text>
+
   <!-- ============ Resumo ============ -->
-  <rect x="40" y="2256" width="1520" height="76" rx="18" fill="#111827"/>
+  <rect x="40" y="3130" width="1520" height="76" rx="18" fill="#111827"/>
   <g font-size="19" fill="#fff" text-anchor="middle">
-    <text x="300" y="2302"><tspan font-weight="800" fill="#93C5FD">IP</tspan> = quem é o dispositivo</text>
-    <text x="800" y="2302"><tspan font-weight="800" fill="#FDBA74">Sub-rede</tspan> = em qual “rua” ele está</text>
-    <text x="1300" y="2302"><tspan font-weight="800" fill="#C4B5FD">VLAN</tspan> = em qual rede lógica do switch</text>
+    <text x="300" y="3176"><tspan font-weight="800" fill="#93C5FD">IP</tspan> = quem é o dispositivo</text>
+    <text x="800" y="3176"><tspan font-weight="800" fill="#FDBA74">Sub-rede</tspan> = em qual “rua” ele está</text>
+    <text x="1300" y="3176"><tspan font-weight="800" fill="#C4B5FD">VLAN</tspan> = em qual rede lógica do switch</text>
   </g>
 </svg>
